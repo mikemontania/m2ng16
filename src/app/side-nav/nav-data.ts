@@ -27,11 +27,7 @@ export const navbarData: INavbarData[] = [
             }
         ]
     },
-    {
-        routeLink: 'statistics',
-        icon: 'fal fa-chart-bar',
-        label: 'Statistics'
-    },
+    
     {
         routeLink: 'coupens',
         icon: 'fal fa-tags',

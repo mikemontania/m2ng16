@@ -44,26 +44,13 @@ main {
     z-index: 1;
 }
 
-app-side-nav{
-  position: absolute;
-  left: 0rem;
-  width: 60px;  
-  height: calc(100vh - 4rem);
-  background-color: rgb(34,34,34,1);
-  border-top: 1px solid white;
-  overflow-x: hidden;
-  white-space: nowrap;
-  transition: width 200ms ease-in;
-}
+ 
 
-.app-side-nav-open{
-    width: 250px;
-}
-
+ 
 .display-area{
     position: absolute;
-    width: calc(100% - 60px);
-    left: 60px;
+    width: calc(100% - 80px);
+    left: 80px;
 }
 .display-area-shrink{ 
     width: calc(100% - 250px);

@@ -1,5 +1,5 @@
 .sidenav {
-    background: #263238;
+    background-color: rgb(34,34,34,1);
     transition: all 0.5s ease;
     position: fixed;
     z-index: 1;
@@ -46,7 +46,7 @@
     font-size: 24px;
 }
 .sidenav-collapsed {
-    width: 16.5625rem;
+    width: 250px;
 }
 .sidenav-nav {
     list-style: none;
