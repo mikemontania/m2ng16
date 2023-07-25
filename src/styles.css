@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    margin: 1.25rem 0 1.25rem 0;
+    box-shadow: 0 0.25rem 0.5rem #e6edef;
+}
+.card .card-head {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #edf1f7;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.card .card-body {
+    padding: 1rem 1.5rem;
+}
+
+app-header {
+    position:  fixed;
+    width: 100%;
+    top:0px;
+    height: 4rem;
+    z-index: 2;
+}
+main {
+    position:  absolute;
+    width: 100%;
+    top:4rem;
+    z-index: 1;
+}
+
+app-side-nav{
+  position: absolute;
+  left: 0rem;
+  width: 60px;  
+  height: calc(100vh - 4rem);
+  background-color: rgb(34,34,34,1);
+  border-top: 1px solid white;
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: width 200ms ease-in;
+}
+
+.app-side-nav-open{
+    width: 250px;
+}
+
+.display-area{
+    position: absolute;
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.display-area-shrink{ 
+    width: calc(100% - 250px);
+    left: 250px;
+}
