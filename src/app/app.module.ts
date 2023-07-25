@@ -2,31 +2,38 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
-import { SublevelMenuComponent } from './side-nav/sublevel-menu.component';
-import { RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
- import { SettingsComponent } from './settings/settings.component';
+import { AppComponent } from './app.component'; 
 import { AppRoutingModule } from './app-routing.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthModule } from './auth/auth.module';
+import { PagesModule } from './pages/pages.module';
+import { InterceptorService } from './services/service.index';
+import { ServiceModule } from './services/service.module';
+import { NopagefoundComponent } from './template/nopagefound/nopagefound.component';
  
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SideNavComponent,
-    SublevelMenuComponent,
-    DashboardComponent,
-     SettingsComponent
+    NopagefoundComponent,  
   ],
   imports: [
-    RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PagesModule,
+    AuthModule,
+     FormsModule,
+    ReactiveFormsModule,
+    ServiceModule, 
   ],
-  providers: [],
+  providers: [ 
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

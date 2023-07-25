@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
- import { DashboardComponent } from './dashboard/dashboard.component';
- 
-import { ProductsComponent } from './products/products.component';
-import { SettingsComponent } from './settings/settings.component';
- 
+import { AuthRoutingModule } from './auth/auth.routing';
+   
+import { PagesRoutingModule } from './pages/pages.routing';
+import { NopagefoundComponent } from './template/nopagefound/nopagefound.component';
 const routes: Routes = [
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent},
-  {
-    path: 'products',
-    loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
-  },
-   
-   
-  {path: 'settings', component: SettingsComponent}
+     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    { path: '**', component: NopagefoundComponent }
 ];
 
+ 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+    imports: [
+      RouterModule.forRoot( routes, { useHash: true } ),
+      PagesRoutingModule,
+      AuthRoutingModule
+    ],
+    exports: [ RouterModule ]
+  })
+  export class AppRoutingModule { }

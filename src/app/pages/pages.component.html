@@ -1,0 +1,10 @@
+<div class="container-fluid g-0">
+    <app-header (menuToggled)="collapsed = $event;"></app-header>
+    <main>
+        <app-side-nav class="black-border" [collapsed]="collapsed" [ngClass]="{'sidenav-collapsed':collapsed}">
+        </app-side-nav>
+        <div class="display-area p-3" [ngClass]="{'display-area-shrink':collapsed}">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

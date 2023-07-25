@@ -1,0 +1,31 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg rounded" style="width: 300px;">
+      <div class="text-center mb-4">
+        <img src="../../../favicon.ico" alt="Logo" class="logo-img">
+        <h3>Iniciar sesión</h3>
+      </div>
+      <form ngNativeValidate #f="ngForm" class="form-horizontal form-material" (ngSubmit)="ingresar(f)">
+          <div class="mb-3">
+          <label for="username" class="form-label">Usuario</label>
+          <input type="email" [ngModel]="username" id="usuario" name="username" class="form-control" type="email"
+            required placeholder="Correo del usuario">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <div class="input-group">
+            <input ngModel name="password" class="form-control" type="password" [type]="showPassword ? 'text' : 'password'"
+              required placeholder="Contraseña">
+            <button class="btn btn-outline-secondary" type="button" id="togglePassword" (click)="toggleShowPassword()">
+              <i [class]="showPassword ? 'far fa-eye-slash' : 'far fa-eye'"></i>
+             </button>
+          </div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="rememberMe">
+          <label class="form-check-label" for="rememberMe"> Recuérdame</label>
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Ingresar</button>
+      </form>
+    </div>
+  </div>
+  
