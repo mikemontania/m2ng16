@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BASE_URL } from '../../config/config';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -34,9 +34,7 @@ export class LoginService {
           exp = new Date(usu.exp * 1000);
           console.log('inicio:' + ini);
           console.log('expira:' + exp);
-          localStorage.removeItem('token');
-          this.user.codSucursal = usu.codSucursal;
-          this.user.codSucursalErp = usu.codSucursalErp;
+          localStorage.removeItem('token'); 
           this.guardarLocalStorage(response.token, this.user);
           console.log('tokenRenovado:');
           return true;
@@ -52,7 +50,7 @@ export class LoginService {
   renuevaToken() {
     let url = BASE_URL + 'auth/login';
     let body = JSON.stringify({
-      username: this.user.username,
+      username: this.user.usuario,
       password: this.user.password,
     });
     return this.http
@@ -66,9 +64,7 @@ export class LoginService {
           let exp;
           usu = JSON.parse(window.atob(decode[1]));
           ini = new Date(usu.iat * 1000);
-          exp = new Date(usu.exp * 1000);
-          this.user.codSucursal = usu.codSucursal;
-          this.user.codSucursalErp = usu.codSucursalErp;
+          exp = new Date(usu.exp * 1000); 
           console.log('inicio:' + ini);
           console.log('expira:' + exp);
           localStorage.removeItem('token');
@@ -157,45 +153,35 @@ export class LoginService {
     )
   }
 
-  login(user: User, recordar: boolean = false) {
+  login(body:any , recordar: boolean = false) {
     localStorage.removeItem('tv');
     localStorage.removeItem('token');
     if (recordar) {
-      localStorage.setItem('username', user.username);
+      localStorage.setItem('username', body.username);
     } else {
       localStorage.removeItem('username');
     }
-    let body = JSON.stringify({
-      username: user.username,
-      password: user.password,
-    });
+  
     let url = BASE_URL + 'auth/login';
-
-    return this.http.post(url, body)
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.post(url, JSON.stringify({
+      username: body.username,
+      password: body.password,
+    }),httpOptions)
       .pipe(
         map((response: any) => {
-          /*     let t = JSON.parse(JSON.stringify(response));
-          console.log(t.token); */
+              
           let decode = [];
           decode = response.token.split('.');
           let usu: any;
           let ini;
           let exp;
           usu = JSON.parse(window.atob(decode[1]));
-          // console.error('usuarioDesencriptado: ', usu);
-          user.codUsuario = usu.codUsuario;
-          user.codEmpresa = usu.codEmpresa;
-          user.codSucursal = usu.codSucursal;
-          user.codEmpresaErp = usu.codEmpresaErp;
-          user.codSucursalErp = usu.codSucursalErp;
-          user.nombre = usu.nombre;
-          user.username = usu.sub;
-          user.authorities = usu.authorities;
-          user.maxDescuentoImp = usu.maxDescuentoImp;
-          user.maxDescuentoPorc = usu.maxDescuentoPorc;
-          user.cantItem = usu.cantItem;
-          user.img = '';
-          user.password = ''
+           console.log('usuarioDesencriptado: ', usu);
+ 
+          const user = new User(usu.id, usu.empresaId , usu.sucursalesId , usu.admin , usu.usuario , usu.rol )
           // console.log('iat', new Date(usu.iat  ));
           // console.log('exp', new Date(usu.iat  ));
           // ini = new Date(usu.iat * 1000);

@@ -1,75 +1,111 @@
 <!-- Nav tabs -->
 <nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+  <div class="navbar-header">
+    <a class="navbar-brand" routerLink="/dashboard">
+      <!-- Logo icon -->
+      <b>
 
-    <a class="navbar-brand px-4" href="#">Mikemontania </a>
-    <ul class="navbar-nav mr-auto menu-button  text-light">
-        <li class="nav-item">
-            <a class="nav-link nav-toggler" (click)="MenuToggled()" href="javascript:void(0)">
-                <i class="fa-solid fa-bars"></i>
-            </a>
-        </li>
+        <img src="assets/images/logo-icon-m.png" alt="homepage" class="dark-logo" />
+
+      </b>
+      <!--End Logo icon -->
+      <!-- Logo text -->
+      <span>
+        <!-- dark Logo text cavallaro -->
+        <!-- <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                 <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> -->
+
+
+        <!-- dark Logo text mobile -->
+        <img src="assets/images/logo-light-text-m.png" class="light-logo" alt="homepage" />
+        <img src="assets/images/pos-celeste.png" />
+
+        <!--  <img src="assets/images/pos-celeste.png" alt="homepage" class="dark-logo" /> -->
+        <!-- Light Logo text -->
+        <!--                          <img src="assets/images/pos-celeste.png" class="light-logo" alt="homepage" />
+-->
+        <!--  <img *ngIf="empresa.img" [attr.src]="empresa.img | imagen:'empresas' | async"    />
+                 <img *ngIf="!empresa.img" [src]="sinImagen"   > -->
+      </span>
+    </a>
+  </div>
+  <div class="navbar-collapse">
+    <ul class="navbar-nav me-auto menu-button  text-light ">
+      <li class="nav-item">
+        <a class="nav-link nav-toggler" (click)="MenuToggled()" href="javascript:void(0)">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav me-auto    text-light ">
+
+      <li class="nav-item">
+        <span  >
+
+         TERMINAL: CAPIATA
+        </span>
+      </li>
     </ul>
 
-    <div class="navbar-collapse">
-        <!--         <ul class="navbar-nav me-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                    Menu1
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child1 </a></li>
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child2 </a></li>
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child3 </a></li>
-                </ul>
 
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                    Menu2
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child1 </a></li>
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child2 </a></li>
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child3 </a></li>
-                </ul>
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex notificador">
+      <li class="nav-item">
+        <a class="nav-link" href="#" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fa fa-lg fa-bell"></i>
+          <span class="notification-badge badge badge-danger">1</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fa fa-lg fa-calendar-alt"></i>
+          <span class="notification-badge badge badge-danger">4</span>
+        </a>
+      </li>
 
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                    Menu3
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child1 </a></li>
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child2 </a></li>
-                    <li><a class="dropdown-item" href="#" role="button" data-bs-toggle="dropdown"> child3 </a></li>
-                </ul>
-
-            </li>
-            <li class="nav-item dropdown profile-logo dropdown">
-                <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">
-                    Mike
-                </button>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#" data-bs-toggle="dropdown"> Login </a></li>
-                    <li><a class="dropdown-item" href="#" data-bs-toggle="dropdown"> Perfil </a></li>
-                    <li><a class="dropdown-item" href="#" data-bs-toggle="dropdown"> Tema </a></li>
-                    <li><a class="dropdown-item" href="#" data-bs-toggle="dropdown"> salir </a></li>
-        
-                </ul>
-            </li>  
-        </ul> -->
-    </div>
-    <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-            <a class="text-light " (click)="logout()">
-                Salir <i class="fas fa-sign-out-alt"></i>
-            </a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-lg fa-envelope notification-icon"></i>
+          <span class="notification-badge badge badge-danger">2</span>
+        </a>
+      </li>
     </ul>
-    <!--    <form class="d-flex me-5">
+
+
+
+
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+      <li class="nav-item">
+        <a class="nav-link text-white " href="javascript:void(0)">
+
+          miguel.montania@cavallaro.com.py
+        </a>
+      </li>
+    </ul>
+
+
+  </div>
+  <ul class="navbar-nav me-auto  ">
+
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" id="adminDropdown" role="button" data-bs-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style="position: relative;">
+        <img src="assets/images/users/1.jpg" alt="User Profile" class="rounded-circle user-img">
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="adminDropdown" style="border: none; padding: 0;">
+        <li class="nav-item"><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+        <li class="nav-item"><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        <li class="nav-item">
+          <hr class="dropdown-divider">
+        </li>
+        <li class="nav-item"><a class="dropdown-item" href="#" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+
+      </ul>
+    </li>
+  </ul>
+  <!--    <form class="d-flex me-5">
         <input class="form-control me-2" type="search" placeholder="Busqueda" />
         <button class="btn btn-outline-light" type="submit">Buscar</button>
     </form> -->
-
 
 </nav>

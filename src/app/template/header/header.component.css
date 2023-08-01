@@ -1,6 +1,9 @@
 nav{
     height: 100%;
 }
+.navbar-header{
+  width: 240px;
+}
 .menu-button{
     display: flex;
     justify-content: center;
@@ -15,3 +18,31 @@ nav{
  a{
     text-decoration: none;
  }
+
+span.notification-badge {
+  position: relative;
+  top: -10px;
+  right: 10px;
+  background-color: red;
+  border:white 1px solid;
+  margin-right: -18px;
+}
+
+/*******/
+
+.notificador {
+  width: 250px;
+  display: flex;
+  justify-content: left;
+}
+
+.notificador .nav-link {
+  display: flex;
+  align-items: center;
+}
+/*******/
+.user-img{
+  width: 36px;
+  height: 36px;
+  margin-right: 5px;
+}

@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     });
     Swal.showLoading();
 
-    let user = new User(null, null, null, null, null, null, forma.value.username, forma.value.password, null, null, null, null, null);
+    let user: any = {username:forma.value.username, password:forma.value.password}  ;
     this._loginService.login(user, forma.value.recuerdame)
       .subscribe(correcto => {
         this.router.navigate(['/dashboard']);

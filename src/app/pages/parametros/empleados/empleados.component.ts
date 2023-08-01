@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
-
-@Component({
+import { Component, OnInit } from '@angular/core';
+ @Component({
   selector: 'app-empleados',
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.css']
 })
-export class EmpleadosComponent {
+export class EmpleadosComponent  {
 
 }
