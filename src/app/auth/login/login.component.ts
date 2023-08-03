@@ -3,9 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; 
 import { LoginService } from '../../services/login/login.service';
 import Swal from 'sweetalert2';
-import { User } from 'src/app/models/user.model';
-  
-
 
 @Component({
   selector: 'app-login',
@@ -16,7 +13,6 @@ export class LoginComponent implements OnInit {
   showPassword: boolean = false;
   username: string;
   recuerdame: boolean = false;
-
   auth2: any;
 
   constructor(

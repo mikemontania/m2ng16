@@ -7,44 +7,7 @@
     width: 5rem;
     height: 100vh;
     box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
-}
-.sidenav .logo-container {
-    display: flex;
-    align-items: center;
-    padding: 0.938rem 0.938rem 0 0.938rem;
-    width: 100%;
-}
-.sidenav .logo-container .logo {
-    background: #fff;
-    text-align: center;
-    width: 3rem;
-    min-width: 3rem;
-    border-radius: 0.313rem;
-    padding: 0.313rem;
-    font-size: 24px;
-    font-weight: 900;
-    cursor: pointer;
-    border: none;
-}
-.sidenav .logo-container .logo-text {
-    margin-left: 1.5rem;
-    font-size: 24px;
-    font-weight: 700;
-    color: #fff;
-}
-.sidenav .logo-container .btn-close {
-    margin-left: auto;
-    cursor: pointer;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: transparent;
-    border: none;
-}
-.sidenav .logo-container .btn-close .fa-times {
-    color: #fff;
-    font-size: 24px;
-}
+} 
 .sidenav-collapsed {
     width: 250px;
 }
@@ -61,6 +24,7 @@
     width: 100%;
     margin-bottom: 0.625rem;
 }
+/* LINKS Y TEXTO**/
 .sidenav-nav .sidenav-nav-item .sidenav-nav-link {
     display: flex;
     align-items: center;
@@ -70,6 +34,7 @@
     border-radius: 0.625rem;
     transition: all 0.3s ease;
 }
+/* ICONOS**/
 .sidenav-nav .sidenav-nav-item .sidenav-nav-link .sidenav-link-icon {
     font-size: 22px;
     width: 2rem;
@@ -77,25 +42,32 @@
     margin: 0 0.5rem;
     text-align: center;
 }
+/* ESPACIO ENTRE ICONO Y TEXTO**/
 .sidenav-nav .sidenav-nav-item .sidenav-nav-link .sidenav-link-text {
     margin-left: 1.5rem;
 }
+/* HOVER**/
 .sidenav-nav .sidenav-nav-item .sidenav-nav-link:hover {
     background-color: #fff;
     color: #000;
 }
+/* FLECHITA DE DIRECCION**/
 .sidenav-nav .sidenav-nav-item .sidenav-nav-link:hover .menu-collapse-icon {
     color: #000;
 }
+/* CUADRO ACTIVO**/
 .active {
-    background-color: #fff;
+    background-color: #ffffff;
 }
+/* TEXTO ACTIVO**/
 .active .menu-collapse-icon, .active .sidenav-link-icon, .active .sidenav-link-text {
     color: #000;
 }
+/* TEXTO ACTIVO**/
 .active-sublevel {
     color: #f3f3f3 !important;
 }
+/* FLECHITa*/
 .menu-collapse-icon {
     font-size: 25px;
     width: 2rem;
@@ -104,6 +76,7 @@
     text-align: center;
     color: #f3f3f3;
 }
+/* estilis sub nivel*/
 .sublevel-nav {
     list-style: none;
     margin-left: 10px;
