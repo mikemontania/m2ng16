@@ -1,25 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './header/header.component';  
+import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { SublevelMenuComponent } from './side-nav/sublevel-menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
     imports: [
         RouterModule,
-        CommonModule, 
+        CommonModule,
     ],
     declarations: [
         HeaderComponent,
         SideNavComponent,
-        SublevelMenuComponent
+        SublevelMenuComponent,
+        FooterComponent
     ],
-    exports: [ 
+    exports: [
         HeaderComponent,
         SideNavComponent,
-        SublevelMenuComponent
+        SublevelMenuComponent,
+        FooterComponent
     ]
 })
 export class TemplateModule { }
