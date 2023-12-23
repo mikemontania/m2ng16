@@ -30,13 +30,7 @@ body {
     padding: 1rem 1.5rem;
 }
 
-app-header {
-    position:  fixed;
-    width: 100%;
-    top:0px;
-    height: 4rem;
-    z-index: 2;
-}
+
 main {
     position:  absolute;
     width: 100%;
