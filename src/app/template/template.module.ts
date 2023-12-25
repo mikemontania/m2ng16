@@ -5,6 +5,8 @@ import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { SublevelMenuComponent } from './side-nav/sublevel-menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { ThemeToggleComponent } from '../components/theme-toggle/theme-toggle.component';
+import { ThemeDirective } from '../directives/theme/theme.directive';
 
 
 @NgModule({
@@ -16,13 +18,17 @@ import { FooterComponent } from './footer/footer.component';
         HeaderComponent,
         SideNavComponent,
         SublevelMenuComponent,
-        FooterComponent
+        FooterComponent,
+        ThemeToggleComponent,
+        ThemeDirective
     ],
     exports: [
         HeaderComponent,
         SideNavComponent,
         SublevelMenuComponent,
-        FooterComponent
+        FooterComponent,
+        ThemeDirective,
+        ThemeToggleComponent
     ]
 })
 export class TemplateModule { }

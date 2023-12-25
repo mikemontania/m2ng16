@@ -1,10 +1,14 @@
 <div class="container-fluid g-0">
+
     <app-header (menuToggled)="collapsed = $event;"></app-header>
     <main>
         <app-side-nav class="black-border" (onToggleSideNav)="onToggleSideNav($event)" [collapsed]="collapsed" [ngClass]="{'sidenav-collapsed':collapsed}">
         </app-side-nav>
         <div class="display-area p-3" [ngClass]="{'display-area-shrink':collapsed}">
             <router-outlet></router-outlet>
+            <div [appTheme]="selectedTheme.name">This div will have dynamic theme</div>
+<app-theme-toggle (themeChanged)="onThemeChanged($event)"></app-theme-toggle>
+
             <app-footer></app-footer>
         </div>
     </main>
