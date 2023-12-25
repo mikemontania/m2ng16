@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "version": 7,
   "newProjectRoot": "projects",
   "projects": {
     "m2ng16": {
@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "sweetalert2"
+           ],
             "outputPath": "dist/m2ng16",
             "index": "src/index.html",
             "main": "src/main.ts",

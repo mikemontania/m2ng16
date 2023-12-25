@@ -1,6 +1,6 @@
 {
-  "name": "m2ng16",
-  "version": "0.0.0",
+  "name": "m2ng17",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
